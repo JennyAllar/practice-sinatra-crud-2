@@ -5,6 +5,6 @@
 <a href="/bikes/new">Add Bike</a>
 <ul>
 <% array_of_bikes.each do |bike| %>
-  <li><%= bike[:brand] %> <%= bike[:model] %> <%= bike[:year_made] %> </li>
+  <li><a href="/bikes/<%= bike[:id] %>"><%= bike[:brand] %></a> <%= bike[:model] %> <%= bike[:year_made] %> </li>
   <% end %>
   </ul>

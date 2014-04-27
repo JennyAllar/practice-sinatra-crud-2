@@ -24,4 +24,16 @@ class Application < Sinatra::Application
     DB[:bikes].insert(brand: params[:brand], model: params[:model], year_made: params[:year_made])
     redirect '/'
   end
+
+  get '/bikes/:id' do
+    bike_id = params[:id]
+    single_bike = DB[:bikes][id: bike_id]
+    erb :"bikes/show", locals: {single_bike: single_bike}
+  end
+
+  put '/bikes/:id' do
+    bike_id = params[:id]
+    DB[:bikes].where(id: bike_id).update(brand: params[:brand], model: params[:model], year_made: params[:year_made])
+    redirect '/'
+  end
 end
