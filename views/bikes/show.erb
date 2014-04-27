@@ -4,10 +4,12 @@ Year: <%= single_bike[:year_made] %>
 <br>
 <br>
 <br>
-<a href="/bikes/<%= single_bike[:id] %>/edit">Edit this bike</a>
+<form action="/bikes/<%= single_bike[:id] %>/edit" method="get">
+  <input type="submit" value="Edit this Bike" id="button2">
+</form>
 <form action="/bikes/<%= single_bike[:id] %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Bike" id="button2">
 </form>
-
+<br>
 <a href="/">Go back to list of bikes</a>
