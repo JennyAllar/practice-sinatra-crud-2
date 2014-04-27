@@ -5,3 +5,8 @@
   <input type="text" name="year_made" placeholder="<%= single_bike[:year_made] %>">
   <input type="submit" value="Update Bike" id="button2">
 </form>
+
+<form action="/bikes/<%= single_bike[:id] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Bike" id="button2">
+</form>

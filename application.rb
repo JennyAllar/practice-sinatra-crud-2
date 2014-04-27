@@ -36,4 +36,10 @@ class Application < Sinatra::Application
     DB[:bikes].where(id: bike_id).update(brand: params[:brand], model: params[:model], year_made: params[:year_made])
     redirect '/'
   end
+
+  delete '/bikes/:id' do
+    bike_id = params[:id]
+    DB[:bikes].where(id: bike_id).delete
+    redirect '/'
+  end
 end
