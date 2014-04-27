@@ -1,0 +1,13 @@
+<h1>Editing:</h1>
+<br>
+<%= single_bike[:brand] %>
+<br>
+<br>
+<br>
+<form action="/bikes/<%= single_bike[:id] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="brand" placeholder="<%= single_bike[:brand] %>" autofocus="autofocus">
+  <input type="text" name="model" placeholder="<%= single_bike[:model] %>">
+  <input type="text" name="year_made" placeholder="<%= single_bike[:year_made] %>">
+  <input type="submit" value="Update Bike" id="button2">
+</form>

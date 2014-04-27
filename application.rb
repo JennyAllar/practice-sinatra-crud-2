@@ -42,4 +42,10 @@ class Application < Sinatra::Application
     DB[:bikes].where(id: bike_id).delete
     redirect '/'
   end
+
+  get '/bikes/:id/edit' do
+    bike_id = params[:id]
+    single_bike = DB[:bikes][id: bike_id]
+    erb :"bikes/edit", locals: {single_bike: single_bike}
+  end
 end

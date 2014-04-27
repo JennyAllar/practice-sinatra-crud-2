@@ -1,11 +1,10 @@
-<form action="/bikes/<%= single_bike[:id] %>" method="post">
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="brand" placeholder="<%= single_bike[:brand] %>" autofocus="autofocus">
-  <input type="text" name="model" placeholder="<%= single_bike[:model] %>">
-  <input type="text" name="year_made" placeholder="<%= single_bike[:year_made] %>">
-  <input type="submit" value="Update Bike" id="button2">
-</form>
-
+<h1><%= single_bike[:brand] %></h1>
+Model: <%= single_bike[:model] %><br>
+Year: <%= single_bike[:year_made] %>
+<br>
+<br>
+<br>
+<a href="/bikes/<%= single_bike[:id] %>/edit">Edit this bike</a>
 <form action="/bikes/<%= single_bike[:id] %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Bike" id="button2">
